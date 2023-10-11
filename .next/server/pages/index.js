@@ -477,7 +477,6 @@ function HomePage({ data  }) {
 HomePage.requireNavbarAndFooter = true;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomePage);
 async function getServerSideProps() {
-    console.log("server");
     try {
         const headers = new Headers();
         headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");

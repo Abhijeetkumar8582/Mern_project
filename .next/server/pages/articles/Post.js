@@ -5,25 +5,6 @@ exports.id = 9;
 exports.ids = [9,96,976,780];
 exports.modules = {
 
-/***/ 3868:
-/***/ ((module) => {
-
-/** @type {import('next').NextConfig} */ 
-const nextConfig = {
-    reactStrictMode: true,
-    images: {
-        domains: [
-            "images.pexels.com",
-            "localhost",
-            "reqres.in"
-        ]
-    }
-};
-module.exports = nextConfig;
-
-
-/***/ }),
-
 /***/ 3902:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -39,23 +20,127 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NoPost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(690);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _next_config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3868);
-/* harmony import */ var _next_config__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_next_config__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Tags__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4368);
-
-
 
 
 
 
 function Post({ jsonRes , blog_category , insertDate , jsonRes2  }) {
+    const yogaTags = [
+        "Yoga",
+        "YogaPoses",
+        "Meditation",
+        "YogaLife",
+        "HealthyLiving",
+        "Wellness",
+        "Fitness",
+        "Mindfulness",
+        "YogaJourney",
+        "YogaCommunity",
+        "YogaPractice",
+        "YogaInspiration",
+        "YogaFlow",
+        "YogaTeacher",
+        "YogaEveryday",
+        "StressRelief",
+        "Flexibility",
+        "Strength",
+        "Balance",
+        "InnerPeace"
+    ];
+    const nutritionTags = [
+        "Nutrition",
+        "HealthyEating",
+        "Diet",
+        "NutritionTips",
+        "NutritionFacts",
+        "BalancedDiet",
+        "NutritionAdvice",
+        "HealthyDiet",
+        "NutritionPlan",
+        "EatingWell",
+        "NutritionEducation",
+        "MealPlanning",
+        "NutritionalWellness",
+        "WholeFoods",
+        "NutritionGoals",
+        "Nutritionist",
+        "CleanEating",
+        "NutritionForLife",
+        "HealthyChoices",
+        "FoodAsMedicine"
+    ];
+    const fitnessTags = [
+        "Fitness",
+        "FitnessJourney",
+        "Workout",
+        "Exercise",
+        "HealthyLifestyle",
+        "StrengthTraining",
+        "Cardio",
+        "GymLife",
+        "FitLife",
+        "FitnessMotivation",
+        "FitnessGoals",
+        "ActiveLifestyle",
+        "HealthAndFitness",
+        "Weightlifting",
+        "CrossFit",
+        "Running",
+        "Bodybuilding",
+        "Wellness",
+        "Nutrition",
+        "FitnessCommunity"
+    ];
+    const healthTags = [
+        "Health",
+        "HealthyLiving",
+        "Wellness",
+        "Healthcare",
+        "HealthTips",
+        "HolisticHealth",
+        "MentalHealth",
+        "PhysicalHealth",
+        "WellBeing",
+        "SelfCare",
+        "HealthyChoices",
+        "MindBodyHealth",
+        "HealthAndWellness",
+        "HealthyHabits",
+        "Nutrition",
+        "HealthyMind",
+        "HealthyBody",
+        "WellnessJourney",
+        "FitnessForHealth",
+        "HealthyLifestyle"
+    ];
+    const yogaBenefits = [
+        "Improved flexibility",
+        "Increased strength",
+        "Stress reduction",
+        "Enhanced mental clarity",
+        "Better posture and alignment",
+        "Mind-body connection",
+        "Relaxation",
+        "Inner peace",
+        "Weight management",
+        "Improved balance",
+        "Cardiovascular health",
+        "Respiratory health",
+        "Pain relief",
+        "Flexibility",
+        "Muscle tone",
+        "Mood enhancement",
+        "Better sleep",
+        "Digestive health",
+        "Energy boost",
+        "Spiritual growth"
+    ];
     const [getData, setData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [sugesstionArr, setsugesstionArr] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [blogPostRelevantTag, setblogPostRelevantTag] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [blogTags, setBlogTags] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
-    const shuffledArray = _Tags__WEBPACK_IMPORTED_MODULE_5__.yogaBenefits.slice();
+    const shuffledArray = yogaBenefits.slice();
     let postTag = [];
-    console.log(postTag);
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
         setData(jsonRes);
         setsugesstionArr(jsonRes2);
@@ -68,13 +153,13 @@ function Post({ jsonRes , blog_category , insertDate , jsonRes2  }) {
         }
         setblogPostRelevantTag(shuffledArray);
         if (blog_category === "Yoga") {
-            postTag = _Tags__WEBPACK_IMPORTED_MODULE_5__.yogaTags.slice(0);
+            postTag = yogaTags.slice(0);
         } else if (blog_category === "Fitness") {
-            postTag = _Tags__WEBPACK_IMPORTED_MODULE_5__.fitnessTags.slice(0);
+            postTag = fitnessTags.slice(0);
         } else if (blog_category === "Health") {
-            postTag = _Tags__WEBPACK_IMPORTED_MODULE_5__.healthTags.slice(0);
+            postTag = healthTags.slice(0);
         } else {
-            postTag = _Tags__WEBPACK_IMPORTED_MODULE_5__.nutritionTags.slice(0);
+            postTag = nutritionTags.slice(0);
         }
         for(let i = postTag.length - 1; i > 0; i--){
             const j = Math.floor(Math.random() * (i + 1));
@@ -405,7 +490,6 @@ async function getServerSideProps(context) {
         });
         const data2 = await res2.json();
         const jsonRes2 = data2;
-        // console.log(jsonRes2,"jsonRes2");
         return {
             props: {
                 jsonRes,
@@ -586,7 +670,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [664,636,675,690,368], () => (__webpack_exec__(3902)));
+var __webpack_exports__ = __webpack_require__.X(0, [664,636,675,690], () => (__webpack_exec__(3902)));
 module.exports = __webpack_exports__;
 
 })();

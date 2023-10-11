@@ -38,7 +38,6 @@ function Searchbar({ data  }) {
     const [filteredData, setFilteredData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const searchFilter = (value)=>{
         const searchText = value.toLowerCase();
-        console.log(searchText);
         const filteredItems = data.filter((item)=>item.blogtitle.toLowerCase().includes(searchText));
         setFilteredData(filteredItems);
     };
@@ -304,7 +303,6 @@ function Searchbar({ data  }) {
 Searchbar.requireNavbarAndFooter = true;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Searchbar);
 async function getServerSideProps() {
-    console.log("server");
     try {
         const headers = new Headers();
         headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
