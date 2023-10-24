@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 405;
-exports.ids = [405,976,780,96];
+exports.ids = [405,780,96,976];
 exports.modules = {
 
 /***/ 6616:
@@ -144,6 +144,7 @@ function HomePage({ data  }) {
                                     "data-bs-interval": "10000",
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_4___default()), {
+                                            priority: true,
                                             src: "https://images.pexels.com/photos/1547248/pexels-photo-1547248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
                                             className: "d-block w-100",
                                             width: 500,
@@ -181,6 +182,7 @@ function HomePage({ data  }) {
                                     "data-bs-interval": "2000",
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_4___default()), {
+                                            priority: true,
                                             src: "https://images.pexels.com/photos/3049225/pexels-photo-3049225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
                                             className: "d-block w-100",
                                             width: 500,
@@ -216,6 +218,7 @@ function HomePage({ data  }) {
                                     className: "carousel-item",
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_4___default()), {
+                                            priority: true,
                                             src: "https://images.pexels.com/photos/3622474/pexels-photo-3622474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
                                             className: "d-block w-100",
                                             width: 500,
@@ -478,28 +481,25 @@ function HomePage({ data  }) {
 HomePage.requireNavbarAndFooter = true;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomePage);
 async function getServerSideProps() {
-    try {
-        const headers = new Headers();
-        headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
-        const res = await fetch(`${"http://65.0.45.74:4001"}/category/all_blog`, {
-            headers: headers,
-            mode: "no-cors",
-            timeout: 0
-        });
-        const data = await res.json();
-        return {
-            props: {
-                data
-            }
-        };
-    } catch (error) {
-        // console.error(error);
-        return {
-            props: {
-                data: _pages_userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_5__
-            }
-        };
-    }
+    // try {
+    //   const headers = new Headers();
+    //   headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
+    //   const res = await fetch(`${process.env.NEXT_PUBLIC_API}/category/all_blog`, {
+    //     headers: headers,
+    //     mode: "no-cors",
+    //     timeout: 1,
+    //   });
+    //   const data = await res.json()
+    //   return { props: { data } }
+    // }
+    // catch (error) {
+    // console.error(error);
+    return {
+        props: {
+            data: _pages_userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_5__
+        }
+    };
+// }
 }
 
 

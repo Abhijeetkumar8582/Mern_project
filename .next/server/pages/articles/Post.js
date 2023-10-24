@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 9;
-exports.ids = [9,976,780,96];
+exports.ids = [9,780,96,976];
 exports.modules = {
 
 /***/ 3902:
@@ -350,7 +350,7 @@ function Post({ jsonRes , blog_category , insertDate , jsonRes2  }) {
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                     className: "blogPost_first_image_div",
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_6___default()), {
-                                        loading: "lazy",
+                                        priority: true,
                                         width: 900,
                                         height: 300,
                                         src: jsonRes[1].text,
@@ -481,6 +481,7 @@ function Post({ jsonRes , blog_category , insertDate , jsonRes2  }) {
                                                                                 width: 100,
                                                                                 height: 100,
                                                                                 src: element.image,
+                                                                                alt: element.image,
                                                                                 style: {
                                                                                     width: "100%",
                                                                                     objectFit: "cover",
@@ -509,50 +510,44 @@ function Post({ jsonRes , blog_category , insertDate , jsonRes2  }) {
 Post.requireNavbarAndFooter = true;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Post);
 async function getServerSideProps(context) {
-    try {
-        const { blog_slug  } = context.query;
-        const headers = new Headers();
-        headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
-        const res = await fetch(`${"http://65.0.45.74:4001"}/category/blog/${blog_slug}`, {
-            headers: headers,
-            timeout: 0
-        });
-        const data = await res.json();
-        const jsonRes = data[0].blog_desc;
-        const blog_category = data[0].category;
-        const insertDate = data[0].date;
-        const res2 = await fetch(`${"http://65.0.45.74:4001"}/category/all_blog`, {
-            headers: headers,
-            timeout: 0
-        });
-        const data2 = await res2.json();
-        const jsonRes2 = data2;
-        return {
-            props: {
-                jsonRes,
-                blog_category,
-                insertDate,
-                jsonRes2
-            }
-        };
-    } catch (error) {
-        // console.error(error);
-        const { blog_slug  } = context.query;
-        const data = _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_7__.filter((element)=>blog_slug == element.slug);
-        const jsonRes = data[0].blog_desc;
-        const blog_category = data[0].category;
-        const insertDate = data[0].date;
-        const data2 = _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_7__;
-        const jsonRes2 = data2;
-        return {
-            props: {
-                jsonRes,
-                blog_category,
-                insertDate,
-                jsonRes2
-            }
-        };
-    }
+    // try {
+    //   const { blog_slug } = context.query;
+    //   const headers = new Headers();
+    //   headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
+    //   const res = await fetch(`${process.env.NEXT_PUBLIC_API}/category/blog/${blog_slug}`, {
+    //     headers: headers,
+    //     timeout: 0,
+    //   });
+    //   const data = await res.json()
+    //   const jsonRes = data[0].blog_desc
+    //   const blog_category = data[0].category
+    //   const insertDate = data[0].date
+    //   const res2 = await fetch(`${process.env.NEXT_PUBLIC_API}/category/all_blog`, {
+    //     headers: headers,
+    //     timeout: 0,
+    //   });
+    //   const data2 = await res2.json();
+    //   const jsonRes2 = data2
+    //   return { props: { jsonRes, blog_category, insertDate, jsonRes2 } }
+    // }
+    // catch (error) {
+    // console.error(error);
+    const { blog_slug  } = context.query;
+    const data = _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_7__.filter((element)=>blog_slug == element.slug);
+    const jsonRes = data[0].blog_desc;
+    const blog_category = data[0].category;
+    const insertDate = data[0].date;
+    const data2 = _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_7__;
+    const jsonRes2 = data2;
+    return {
+        props: {
+            jsonRes,
+            blog_category,
+            insertDate,
+            jsonRes2
+        }
+    };
+// }
 }
 
 

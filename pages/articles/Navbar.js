@@ -25,7 +25,7 @@ function Navbar() {
         <div className="container-fluid">
           <Link className="navbar-brand mx-2" href="/">
             <div>
-              <img src="/Brownmen_logo.png" width={40} style={{ mixBlendMode: 'darken' }} />
+              <img src="/Brownmen_logo.png" width={40} style={{ mixBlendMode: 'darken' }} alt="AbhijeetKumar" />
             </div>
           </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

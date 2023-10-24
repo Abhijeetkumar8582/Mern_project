@@ -69,7 +69,7 @@ function Searchbar({ data }) {
               <Link href='#' onClick={() => SearchBox(element.slug)} style={{ textDecoration: "none" }}>
                 <div className="Blogcard">
                   <div className="Blogcard-image">
-                    <Image loading='lazy' src={element.image} width={330} height={170} style={{ borderRadius: '5px' }} className="card-img-top" alt={element.blogtitle} />
+                    <Image loading='lazy' src={element.image} width={330} height={170} style={{ borderRadius: '5px' }} className="card-img-top" alt={element.image} />
                   </div>
                   <div style={{ maxHeight: '250px' }}>
                     <div style={{ height: '15%' }}>
@@ -96,7 +96,7 @@ function Searchbar({ data }) {
                     <Link href='#' onClick={() => SearchBox(element.slug)} style={{ textDecoration: "none" }}>
                       <div className="Blogcard">
                         <div className="Blogcard-image">
-                          <Image loading='lazy' src={element.image} width={330} height={170} style={{ borderRadius: '5px' }} className="card-img-top" alt={element.blogtitle} />
+                          <Image loading='lazy' src={element.image} width={330} height={170} style={{ borderRadius: '5px' }} className="card-img-top" alt={element.image} />
                         </div>
                         <div style={{ maxHeight: '250px' }}>
                           <div style={{ height: '15%' }}>
@@ -128,23 +128,23 @@ Searchbar.requireNavbarAndFooter = true;
 export default Searchbar;
 
 export async function getServerSideProps() {
-  try {
+  // try {
 
-    const headers = new Headers();
-    headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/category/all_blog`, {
-      headers: headers,
-      mode: "no-cors",
-      timeout: 0,
+  //   const headers = new Headers();
+  //   headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
+  //   const res = await fetch(`${process.env.NEXT_PUBLIC_API}/category/all_blog`, {
+  //     headers: headers,
+  //     mode: "no-cors",
+  //     timeout: 0,
 
-    });
-    const data = await res.json()
+  //   });
+  //   const data = await res.json()
 
 
-    return { props: { data } }
-  }
-  catch (error) {
+  //   return { props: { data } }
+  // }
+  // catch (error) {
     // console.error(error);
     return { props: { data: fallBackData } };
-  }
+  // }
 }

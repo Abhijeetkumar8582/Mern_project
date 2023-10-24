@@ -14,7 +14,7 @@ function Category({ data }) {
   const [carousel_tittle, setCarousel_tittle] = useState("")
   const [carousel_description, setCarousel_description] = useState("")
   const [getColor, setColor] = useState("#04A123")
-  const [carousel_Image, setCarousel_Image] = useState("")
+  const [carousel_Image, setCarousel_Image] = useState("https://images.pexels.com/photos/3026802/pexels-photo-3026802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
   const category = router.query.category
 
 
@@ -73,7 +73,7 @@ function Category({ data }) {
       <div className='my-5'></div>
       <div className='categoryMainDiv'>
         <div className='categoryMainDiv_containerOne' >
-          <Image loading='lazy' src={carousel_Image} style={{ width: "100%", height: "100%", objectFit: 'cover' }} width={500} height={500} alt={carousel_Image} />
+          <Image  priority={true}  src={carousel_Image} style={{ width: "100%", height: "100%", objectFit: 'cover' }} width={500} height={500} alt="Abhijeet kumar" />
         </div>
         <div className='categoryMainDiv_containerTwo' style={{ background: getColor }}>
           <h1 >{carousel_tittle}</h1>
@@ -86,12 +86,12 @@ function Category({ data }) {
         <h1 className='Featured_text_'>Featured</h1>
       </div>
       <div className='Blogcard_Main_div'>
-        {data.slice(0, 12).map((element, index) => (
+        {data.filter((element)=>category==element.category).map((element, index) => (
           <div className='' style={{ gap: '5px' }} key={index}>
             <Link href='#' onClick={() => refirect_to_post(element.slug)} style={{ textDecoration: "none" }}>
               <div className="Blogcard">
                 <div className="Blogcard-image">
-                  <Image loading='lazy' src={element.image} width={330} height={170} style={{ borderRadius: '5px' }} className="card-img-top" alt={element.blogtitle} />
+                  <Image loading='lazy' src={element.image} width={330} height={170} style={{ borderRadius: '5px' }} className="card-img-top" alt={element.image} />
                 </div>
                 <div style={{ maxHeight: '250px' }}>
                   <div style={{ height: '15%' }}>
@@ -122,22 +122,22 @@ export default Category
 
 export async function getServerSideProps(context) {
 
-  try {
-    const { category } = context.query;
+  // try {
+  //   const { category } = context.query;
 
-    const headers = new Headers();
-    headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/category/${category}`, {
-      headers: headers,
-      timeout: 0,
+  //   const headers = new Headers();
+  //   headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
+  //   const res = await fetch(`${process.env.NEXT_PUBLIC_API}/category/${category}`, {
+  //     headers: headers,
+  //     timeout: 1,
 
-    });
-    const data = await res.json()
+  //   });
+  //   const data = await res.json()
 
-    return { props: { data } }
-  }
-  catch (error) {
+  //   return { props: { data } }
+  // }
+  // catch (error) {
 
     return { props: { data: fallBackData } };
-  }
+  // }
 }

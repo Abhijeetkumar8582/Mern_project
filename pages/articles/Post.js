@@ -109,7 +109,7 @@ function Post({ jsonRes, blog_category, insertDate, jsonRes2 }) {
               <h6 className='text_justify'>{jsonRes[2].text.replace(/<br\s*\/?>/g, ' ')}</h6>
             </div>
             <div className='blogPost_first_image_div'>
-              <Image  loading='lazy' width={900} height={300} src={jsonRes[1].text} className='blogPost_first_image_div_image' alt={jsonRes[1].text} />
+              <Image   priority={true} width={900} height={300} src={jsonRes[1].text} className='blogPost_first_image_div_image' alt={jsonRes[1].text} />
             </div>
           </div>
         </div>
@@ -158,7 +158,7 @@ function Post({ jsonRes, blog_category, insertDate, jsonRes2 }) {
                             <p className="Suggestion_card_name">{element.author}</p>
                           </div>
                           <span className="Suggestion_card_image">
-                            <Image loading='lazy' width={100} height={100} src={element.image} style={{ width: '100%', objectFit: 'cover', borderRadius: '10px', height: '100%' }} />
+                            <Image loading='lazy' width={100} height={100} src={element.image} alt={element.image} style={{ width: '100%', objectFit: 'cover', borderRadius: '10px', height: '100%' }} />
                           </span>
                         </div>
                       </div>
@@ -178,30 +178,30 @@ export default Post
 
 export async function getServerSideProps(context) {
 
-  try {
-    const { blog_slug } = context.query;
+  // try {
+  //   const { blog_slug } = context.query;
 
-    const headers = new Headers();
-    headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/category/blog/${blog_slug}`, {
-      headers: headers,
-      timeout: 0,
+  //   const headers = new Headers();
+  //   headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
+  //   const res = await fetch(`${process.env.NEXT_PUBLIC_API}/category/blog/${blog_slug}`, {
+  //     headers: headers,
+  //     timeout: 0,
 
-    });
-    const data = await res.json()
-    const jsonRes = data[0].blog_desc
-    const blog_category = data[0].category
-    const insertDate = data[0].date
+  //   });
+  //   const data = await res.json()
+  //   const jsonRes = data[0].blog_desc
+  //   const blog_category = data[0].category
+  //   const insertDate = data[0].date
 
-    const res2 = await fetch(`${process.env.NEXT_PUBLIC_API}/category/all_blog`, {
-      headers: headers,
-      timeout: 0,
-    });
-    const data2 = await res2.json();
-    const jsonRes2 = data2
-    return { props: { jsonRes, blog_category, insertDate, jsonRes2 } }
-  }
-  catch (error) {
+  //   const res2 = await fetch(`${process.env.NEXT_PUBLIC_API}/category/all_blog`, {
+  //     headers: headers,
+  //     timeout: 0,
+  //   });
+  //   const data2 = await res2.json();
+  //   const jsonRes2 = data2
+  //   return { props: { jsonRes, blog_category, insertDate, jsonRes2 } }
+  // }
+  // catch (error) {
     // console.error(error);
     const { blog_slug } = context.query;
     const data = fallBackData.filter((element)=>blog_slug==element.slug)
@@ -211,5 +211,5 @@ export async function getServerSideProps(context) {
     const data2 = fallBackData
     const jsonRes2 = data2
     return { props: { jsonRes, blog_category, insertDate, jsonRes2 } }
-  }
+  // }
 }

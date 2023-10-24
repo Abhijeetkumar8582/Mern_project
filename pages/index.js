@@ -63,21 +63,21 @@ function HomePage({ data }) {
           </div>
           <div className="carousel-inner">
             <div id="carouselOne" className="carousel-item  active" data-bs-interval="10000">
-              <Image src="https://images.pexels.com/photos/1547248/pexels-photo-1547248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="d-block w-100" width={500} style={{ objectFit: 'cover', width: '100%' }} height={500} alt="https://imexed" />
+              <Image priority={true}  src="https://images.pexels.com/photos/1547248/pexels-photo-1547248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="d-block w-100" width={500} style={{ objectFit: 'cover', width: '100%' }} height={500} alt="https://imexed" />
               <div className="carousel-caption ">
                 <h1 style={{ color: "white", textAlign: "Center" }}>Get Fit and Strong: Tips and Workouts for a Healthy Lifestyle</h1>
                 <p style={{ color: "white", textAlign: "Center" }}> We share workout plans, nutrition advice, and tips on how to stay motivated</p>
               </div>
             </div>
             <div id="carouselTwo" className="carousel-item" data-bs-interval="2000">
-              <Image src="https://images.pexels.com/photos/3049225/pexels-photo-3049225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="d-block w-100" width={500} style={{ objectFit: 'cover' }} height={500} alt="https://imag750&dpr=2" />
+              <Image priority={true}  src="https://images.pexels.com/photos/3049225/pexels-photo-3049225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="d-block w-100" width={500} style={{ objectFit: 'cover' }} height={500} alt="https://imag750&dpr=2" />
               <div className="carousel-caption ">
                 <h1 style={{ color: "white", textAlign: "Center" }}>Yoga Mind and Body: A Holistic Guide to Wellness</h1>
                 <p style={{ color: "white", textAlign: "Center" }}>Offers a holistic approach to yoga, including tips for developing a strong mind-body connection, meditation techniques, and nutrition advice.</p>
               </div>
             </div>
             <div id="carouselThree" className="carousel-item" >
-              <Image  src="https://images.pexels.com/photos/3622474/pexels-photo-3622474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="d-block w-100" width={500} style={{ objectFit: 'cover' }} height={500} alt="https://images.pe750&dpr=2" />
+              <Image  priority={true}  src="https://images.pexels.com/photos/3622474/pexels-photo-3622474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="d-block w-100" width={500} style={{ objectFit: 'cover' }} height={500} alt="https://images.pe750&dpr=2" />
               <div className="carousel-caption">
                 <h1 style={{ color: "white", textAlign: "Center" }}>Healthy Habits, Healthy You: A Nutrition Guide for Optimal Health</h1>
                 <p style={{ color: "white", textAlign: "Center" }}>Includes articles on the importance of vitamins and minerals, tips for meal planning, and recipe ideas.</p>
@@ -205,23 +205,23 @@ export default HomePage;
 
 export async function getServerSideProps() {
  
-  try {
+  // try {
 
-    const headers = new Headers();
-    headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/category/all_blog`, {
-      headers: headers,
-      mode: "no-cors",
-      timeout: 0,
+  //   const headers = new Headers();
+  //   headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
+  //   const res = await fetch(`${process.env.NEXT_PUBLIC_API}/category/all_blog`, {
+  //     headers: headers,
+  //     mode: "no-cors",
+  //     timeout: 1,
 
-    });
-    const data = await res.json()
+  //   });
+  //   const data = await res.json()
 
 
-    return { props: { data } }
-  }
-  catch (error) {
+  //   return { props: { data } }
+  // }
+  // catch (error) {
     // console.error(error);
     return { props: { data: fallBackData } };
-  }
+  // }
 }

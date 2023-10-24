@@ -52,7 +52,8 @@ function Navbar() {
                                 width: 40,
                                 style: {
                                     mixBlendMode: "darken"
-                                }
+                                },
+                                alt: "AbhijeetKumar"
                             })
                         })
                     }),

@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 333;
-exports.ids = [333,976,780,96];
+exports.ids = [333,780,96,976];
 exports.modules = {
 
 /***/ 8594:
@@ -160,7 +160,7 @@ function Searchbar({ data  }) {
                                                             borderRadius: "5px"
                                                         },
                                                         className: "card-img-top",
-                                                        alt: element.blogtitle
+                                                        alt: element.image
                                                     })
                                                 }),
                                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -244,7 +244,7 @@ function Searchbar({ data  }) {
                                                                         borderRadius: "5px"
                                                                     },
                                                                     className: "card-img-top",
-                                                                    alt: element.blogtitle
+                                                                    alt: element.image
                                                                 })
                                                             }),
                                                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -304,28 +304,25 @@ function Searchbar({ data  }) {
 Searchbar.requireNavbarAndFooter = true;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Searchbar);
 async function getServerSideProps() {
-    try {
-        const headers = new Headers();
-        headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
-        const res = await fetch(`${"http://65.0.45.74:4001"}/category/all_blog`, {
-            headers: headers,
-            mode: "no-cors",
-            timeout: 0
-        });
-        const data = await res.json();
-        return {
-            props: {
-                data
-            }
-        };
-    } catch (error) {
-        // console.error(error);
-        return {
-            props: {
-                data: _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_6__
-            }
-        };
-    }
+    // try {
+    //   const headers = new Headers();
+    //   headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
+    //   const res = await fetch(`${process.env.NEXT_PUBLIC_API}/category/all_blog`, {
+    //     headers: headers,
+    //     mode: "no-cors",
+    //     timeout: 0,
+    //   });
+    //   const data = await res.json()
+    //   return { props: { data } }
+    // }
+    // catch (error) {
+    // console.error(error);
+    return {
+        props: {
+            data: _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_6__
+        }
+    };
+// }
 }
 
 

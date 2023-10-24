@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 493;
-exports.ids = [493,976,780,96];
+exports.ids = [493,780,96,976];
 exports.modules = {
 
 /***/ 3769:
@@ -39,7 +39,7 @@ function Category({ data  }) {
     const [carousel_tittle, setCarousel_tittle] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("");
     const [carousel_description, setCarousel_description] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("");
     const [getColor, setColor] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("#04A123");
-    const [carousel_Image, setCarousel_Image] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("");
+    const [carousel_Image, setCarousel_Image] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("https://images.pexels.com/photos/3026802/pexels-photo-3026802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     const category = router.query.category;
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
         setCategory(category);
@@ -124,7 +124,7 @@ function Category({ data  }) {
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                         className: "categoryMainDiv_containerOne",
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_3___default()), {
-                            loading: "lazy",
+                            priority: true,
                             src: carousel_Image,
                             style: {
                                 width: "100%",
@@ -133,7 +133,7 @@ function Category({ data  }) {
                             },
                             width: 500,
                             height: 500,
-                            alt: carousel_Image
+                            alt: "Abhijeet kumar"
                         })
                     }),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -161,7 +161,7 @@ function Category({ data  }) {
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 className: "Blogcard_Main_div",
-                children: data.slice(0, 12).map((element, index)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                children: data.filter((element)=>category == element.category).map((element, index)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                         className: "",
                         style: {
                             gap: "5px"
@@ -186,7 +186,7 @@ function Category({ data  }) {
                                                 borderRadius: "5px"
                                             },
                                             className: "card-img-top",
-                                            alt: element.blogtitle
+                                            alt: element.image
                                         })
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -240,27 +240,24 @@ function Category({ data  }) {
 Category.requireNavbarAndFooter = true;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Category);
 async function getServerSideProps(context) {
-    try {
-        const { category  } = context.query;
-        const headers = new Headers();
-        headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
-        const res = await fetch(`${"http://65.0.45.74:4001"}/category/${category}`, {
-            headers: headers,
-            timeout: 0
-        });
-        const data = await res.json();
-        return {
-            props: {
-                data
-            }
-        };
-    } catch (error) {
-        return {
-            props: {
-                data: _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_6__
-            }
-        };
-    }
+    // try {
+    //   const { category } = context.query;
+    //   const headers = new Headers();
+    //   headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
+    //   const res = await fetch(`${process.env.NEXT_PUBLIC_API}/category/${category}`, {
+    //     headers: headers,
+    //     timeout: 1,
+    //   });
+    //   const data = await res.json()
+    //   return { props: { data } }
+    // }
+    // catch (error) {
+    return {
+        props: {
+            data: _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_6__
+        }
+    };
+// }
 }
 
 
