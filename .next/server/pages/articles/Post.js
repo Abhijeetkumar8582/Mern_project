@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 9;
-exports.ids = [9,96,976,780];
+exports.ids = [9,976,780,96];
 exports.modules = {
 
 /***/ 3902:
@@ -20,6 +20,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NoPost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(690);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(5675);
+/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9024);
+
+
+
+
 
 
 
@@ -135,6 +146,7 @@ function Post({ jsonRes , blog_category , insertDate , jsonRes2  }) {
         "Energy boost",
         "Spiritual growth"
     ];
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_5__.useRouter)();
     const [getData, setData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [sugesstionArr, setsugesstionArr] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const [blogPostRelevantTag, setblogPostRelevantTag] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
@@ -174,6 +186,14 @@ function Post({ jsonRes , blog_category , insertDate , jsonRes2  }) {
         setsugesstionArr,
         setblogPostRelevantTag
     ]);
+    const handleCLick = (blog_slug)=>{
+        router.push({
+            pathname: "Post",
+            query: {
+                blog_slug: blog_slug
+            }
+        });
+    };
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_3___default()), {
@@ -329,7 +349,10 @@ function Post({ jsonRes , blog_category , insertDate , jsonRes2  }) {
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                     className: "blogPost_first_image_div",
-                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
+                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                        loading: "lazy",
+                                        width: 900,
+                                        height: 300,
                                         src: jsonRes[1].text,
                                         className: "blogPost_first_image_div_image",
                                         alt: jsonRes[1].text
@@ -355,7 +378,11 @@ function Post({ jsonRes , blog_category , insertDate , jsonRes2  }) {
                                                     style: {
                                                         height: " 250px"
                                                     },
-                                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
+                                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                                        width: 400,
+                                                        loading: "lazy",
+                                                        height: 400,
+                                                        alt: item.text,
                                                         src: item.text,
                                                         style: {
                                                             width: "100%",
@@ -424,36 +451,46 @@ function Post({ jsonRes , blog_category , insertDate , jsonRes2  }) {
                                                 },
                                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                     className: "Suggestion_card_Main_Div",
-                                                    children: sugesstionArr.filter((element)=>element.category === blog_category).slice(0, 2).map((element, i)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                            className: "Suggestion_card",
-                                                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                                className: "Suggestion_card_header",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                                        children: [
-                                                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h6", {
-                                                                                className: "title",
-                                                                                children: element.blogtitle
-                                                                            }),
-                                                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
-                                                                                className: "Suggestion_card_name",
-                                                                                children: element.author
+                                                    children: sugesstionArr.filter((element)=>element.category === blog_category && element.blogtitle !== jsonRes[0].text).slice(2, 4).map((element, i)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_4___default()), {
+                                                            href: "#",
+                                                            onClick: ()=>handleCLick(element.slug),
+                                                            style: {
+                                                                textDecoration: "none"
+                                                            },
+                                                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                                                className: "Suggestion_card",
+                                                                children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                                    className: "Suggestion_card_header",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                                            children: [
+                                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h6", {
+                                                                                    className: "title",
+                                                                                    children: element.blogtitle
+                                                                                }),
+                                                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                                                                                    className: "Suggestion_card_name",
+                                                                                    children: element.author
+                                                                                })
+                                                                            ]
+                                                                        }),
+                                                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                                            className: "Suggestion_card_image",
+                                                                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                                                                loading: "lazy",
+                                                                                width: 100,
+                                                                                height: 100,
+                                                                                src: element.image,
+                                                                                style: {
+                                                                                    width: "100%",
+                                                                                    objectFit: "cover",
+                                                                                    borderRadius: "10px",
+                                                                                    height: "100%"
+                                                                                }
                                                                             })
-                                                                        ]
-                                                                    }),
-                                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                                                        className: "Suggestion_card_image",
-                                                                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                                                                            src: element.image,
-                                                                            style: {
-                                                                                width: "100%",
-                                                                                objectFit: "cover",
-                                                                                borderRadius: "10px",
-                                                                                height: "100%"
-                                                                            }
                                                                         })
-                                                                    })
-                                                                ]
+                                                                    ]
+                                                                })
                                                             })
                                                         }, i))
                                                 })
@@ -476,7 +513,7 @@ async function getServerSideProps(context) {
         const { blog_slug  } = context.query;
         const headers = new Headers();
         headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
-        const res = await fetch(`${"http://52.66.245.117:4001"}/category/blog/${blog_slug}`, {
+        const res = await fetch(`${"http://65.0.45.74:4001"}/category/blog/${blog_slug}`, {
             headers: headers,
             timeout: 0
         });
@@ -484,7 +521,7 @@ async function getServerSideProps(context) {
         const jsonRes = data[0].blog_desc;
         const blog_category = data[0].category;
         const insertDate = data[0].date;
-        const res2 = await fetch(`${"http://52.66.245.117:4001"}/category/all_blog`, {
+        const res2 = await fetch(`${"http://65.0.45.74:4001"}/category/all_blog`, {
             headers: headers,
             timeout: 0
         });
@@ -499,9 +536,21 @@ async function getServerSideProps(context) {
             }
         };
     } catch (error) {
-        console.error(error);
+        // console.error(error);
+        const { blog_slug  } = context.query;
+        const data = _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_7__.filter((element)=>blog_slug == element.slug);
+        const jsonRes = data[0].blog_desc;
+        const blog_category = data[0].category;
+        const insertDate = data[0].date;
+        const data2 = _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_7__;
+        const jsonRes2 = data2;
         return {
-            props: {}
+            props: {
+                jsonRes,
+                blog_category,
+                insertDate,
+                jsonRes2
+            }
         };
     }
 }
@@ -670,7 +719,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [664,636,675,690], () => (__webpack_exec__(3902)));
+var __webpack_exports__ = __webpack_require__.X(0, [664,636,675,24,690], () => (__webpack_exec__(3902)));
 module.exports = __webpack_exports__;
 
 })();

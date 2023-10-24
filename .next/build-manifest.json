@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/MillgFUfr_57dGGYM5zO_/_buildManifest.js",
-    "static/MillgFUfr_57dGGYM5zO_/_ssgManifest.js"
+    "static/fiOmHAZydJJXVpQ9K5ZMP/_buildManifest.js",
+    "static/fiOmHAZydJJXVpQ9K5ZMP/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -14,14 +14,14 @@
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-0ecb9ccfcb6c9b24.js",
-      "static/chunks/589-98bae72fcb040a72.js",
-      "static/chunks/pages/index-35e78e309627a776.js"
+      "static/chunks/959-e2d6a077ca8484be.js",
+      "static/chunks/pages/index-d9605deb4129e481.js"
     ],
     "/_app": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-0ecb9ccfcb6c9b24.js",
-      "static/css/43699a22e2c660f4.css",
+      "static/css/8f30f5e9fb793d4d.css",
       "static/chunks/pages/_app-52f443fb4ca8692e.js"
     ],
     "/_error": [
@@ -60,7 +60,7 @@
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-0ecb9ccfcb6c9b24.js",
       "static/chunks/959-e2d6a077ca8484be.js",
-      "static/chunks/pages/articles/Post-4297875ff85d03aa.js"
+      "static/chunks/pages/articles/Post-920f591575574424.js"
     ],
     "/articles/Privacy": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
@@ -79,14 +79,14 @@
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-0ecb9ccfcb6c9b24.js",
-      "static/chunks/pages/articles/Terms-6e008475f415d182.js"
+      "static/chunks/pages/articles/Terms-0e3bed0babbd49dd.js"
     ],
     "/articles/category": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-0ecb9ccfcb6c9b24.js",
       "static/chunks/959-e2d6a077ca8484be.js",
-      "static/chunks/pages/articles/category-2106fc63a6da416a.js"
+      "static/chunks/pages/articles/category-e4113a69713016e9.js"
     ]
   },
   "ampFirstPages": []

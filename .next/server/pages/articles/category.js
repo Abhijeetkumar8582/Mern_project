@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 493;
-exports.ids = [493,96,976,780];
+exports.ids = [493,976,780,96];
 exports.modules = {
 
 /***/ 3769:
@@ -25,6 +25,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9024);
+
 
 
 
@@ -122,6 +124,7 @@ function Category({ data  }) {
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                         className: "categoryMainDiv_containerOne",
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_3___default()), {
+                            loading: "lazy",
                             src: carousel_Image,
                             style: {
                                 width: "100%",
@@ -241,7 +244,7 @@ async function getServerSideProps(context) {
         const { category  } = context.query;
         const headers = new Headers();
         headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
-        const res = await fetch(`${"http://52.66.245.117:4001"}/category/${category}`, {
+        const res = await fetch(`${"http://65.0.45.74:4001"}/category/${category}`, {
             headers: headers,
             timeout: 0
         });
@@ -253,7 +256,9 @@ async function getServerSideProps(context) {
         };
     } catch (error) {
         return {
-            props: {}
+            props: {
+                data: _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_6__
+            }
         };
     }
 }
@@ -422,7 +427,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [664,636,675], () => (__webpack_exec__(3769)));
+var __webpack_exports__ = __webpack_require__.X(0, [664,636,675,24], () => (__webpack_exec__(3769)));
 module.exports = __webpack_exports__;
 
 })();

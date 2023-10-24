@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 405;
-exports.ids = [405,96,976];
+exports.ids = [405,976,780,96];
 exports.modules = {
 
 /***/ 6616:
@@ -15,21 +15,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_legacy_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9755);
-/* harmony import */ var next_legacy_image__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_legacy_image__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1664);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1853);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(968);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(968);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5675);
+/* harmony import */ var next_image__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_image__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _pages_userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9024);
+
 
 
 
 
 
 function HomePage({ data  }) {
-    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_2__.useRouter)();
     const handleCLick = (blog_slug)=>{
         router.push({
             pathname: "articles/Post",
@@ -66,7 +68,7 @@ function HomePage({ data  }) {
     ];
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_4___default()), {
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_3___default()), {
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
                         children: " Brownmen"
@@ -141,7 +143,7 @@ function HomePage({ data  }) {
                                     className: "carousel-item  active",
                                     "data-bs-interval": "10000",
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_4___default()), {
                                             src: "https://images.pexels.com/photos/1547248/pexels-photo-1547248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
                                             className: "d-block w-100",
                                             width: 500,
@@ -178,7 +180,7 @@ function HomePage({ data  }) {
                                     className: "carousel-item",
                                     "data-bs-interval": "2000",
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_4___default()), {
                                             src: "https://images.pexels.com/photos/3049225/pexels-photo-3049225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
                                             className: "d-block w-100",
                                             width: 500,
@@ -213,7 +215,7 @@ function HomePage({ data  }) {
                                     id: "carouselThree",
                                     className: "carousel-item",
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_4___default()), {
                                             src: "https://images.pexels.com/photos/3622474/pexels-photo-3622474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
                                             className: "d-block w-100",
                                             width: 500,
@@ -292,7 +294,7 @@ function HomePage({ data  }) {
                                 style: {
                                     width: "100%"
                                 },
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                                     href: "#",
                                     onClick: ()=>onNavbarClick(element.heading),
                                     style: {
@@ -330,7 +332,7 @@ function HomePage({ data  }) {
                         className: "Trending_Main_div",
                         children: data.filter((element)=>element.category === "Yoga").slice(0, 9).map((element, index)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: "",
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                                     href: "#",
                                     onClick: ()=>handleCLick(element.slug),
                                     style: {
@@ -341,7 +343,7 @@ function HomePage({ data  }) {
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                 className: "image",
-                                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_legacy_image__WEBPACK_IMPORTED_MODULE_1___default()), {
+                                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_4___default()), {
                                                     loading: "lazy",
                                                     src: element.image,
                                                     width: 300,
@@ -400,7 +402,7 @@ function HomePage({ data  }) {
                         className: "Blog_Container_Main_div ",
                         children: data.slice(0, 12).map((element, index)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: "",
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
                                     href: "#",
                                     onClick: ()=>handleCLick(element.slug),
                                     style: {
@@ -411,16 +413,15 @@ function HomePage({ data  }) {
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                 className: "card__img",
-                                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_legacy_image__WEBPACK_IMPORTED_MODULE_1___default()), {
+                                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_4___default()), {
                                                     loading: "lazy",
                                                     src: element.image,
                                                     style: {
                                                         width: "100%",
-                                                        height: "100%",
                                                         borderRadius: "20px 20px 0px 0px"
                                                     },
-                                                    width: 300,
-                                                    height: 120,
+                                                    width: 200,
+                                                    height: 150,
                                                     alt: element.image
                                                 })
                                             }),
@@ -480,7 +481,7 @@ async function getServerSideProps() {
     try {
         const headers = new Headers();
         headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
-        const res = await fetch(`${"http://52.66.245.117:4001"}/category/all_blog`, {
+        const res = await fetch(`${"http://65.0.45.74:4001"}/category/all_blog`, {
             headers: headers,
             mode: "no-cors",
             timeout: 0
@@ -494,7 +495,9 @@ async function getServerSideProps() {
     } catch (error) {
         // console.error(error);
         return {
-            props: {}
+            props: {
+                data: _pages_userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_5__
+            }
         };
     }
 }
@@ -530,6 +533,13 @@ module.exports = require("next/dist/shared/lib/head-manager-context.js");
 
 /***/ }),
 
+/***/ 4486:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/image-blur-svg.js");
+
+/***/ }),
+
 /***/ 744:
 /***/ ((module) => {
 
@@ -541,6 +551,13 @@ module.exports = require("next/dist/shared/lib/image-config-context.js");
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/image-config.js");
+
+/***/ }),
+
+/***/ 9552:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/image-loader");
 
 /***/ }),
 
@@ -649,7 +666,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [664,636,755], () => (__webpack_exec__(6616)));
+var __webpack_exports__ = __webpack_require__.X(0, [664,636,675,24], () => (__webpack_exec__(6616)));
 module.exports = __webpack_exports__;
 
 })();

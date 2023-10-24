@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 333;
-exports.ids = [333,96,976,780];
+exports.ids = [333,976,780,96];
 exports.modules = {
 
 /***/ 8594:
@@ -25,6 +25,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(968);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9024);
+
 
 
 
@@ -33,7 +35,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function Searchbar({ data  }) {
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
-    // const [getText, setText] = useState("")
     const [getText, setText] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("");
     const [filteredData, setFilteredData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
     const searchFilter = (value)=>{
@@ -306,7 +307,7 @@ async function getServerSideProps() {
     try {
         const headers = new Headers();
         headers.append("X-Api-Key", "6706d6eb-e6ae-48ae-ad82-9e4c0ac50e96");
-        const res = await fetch(`${"http://52.66.245.117:4001"}/category/all_blog`, {
+        const res = await fetch(`${"http://65.0.45.74:4001"}/category/all_blog`, {
             headers: headers,
             mode: "no-cors",
             timeout: 0
@@ -320,7 +321,9 @@ async function getServerSideProps() {
     } catch (error) {
         // console.error(error);
         return {
-            props: {}
+            props: {
+                data: _userdatabase_abhis_json__WEBPACK_IMPORTED_MODULE_6__
+            }
         };
     }
 }
@@ -489,7 +492,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [664,636,675], () => (__webpack_exec__(8594)));
+var __webpack_exports__ = __webpack_require__.X(0, [664,636,675,24], () => (__webpack_exec__(8594)));
 module.exports = __webpack_exports__;
 
 })();
